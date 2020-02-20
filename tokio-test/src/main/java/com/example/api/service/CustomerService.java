@@ -33,9 +33,8 @@ public class CustomerService {
 		repository.deleteById(id);
 	}
 	
-	public String addCliente(){
-		return null;
-		//return repository.save(customer);
+	public void addCliente(Customer customer){
+		repository.save(customer);
 	}
 
 }

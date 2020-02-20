@@ -21,5 +21,14 @@ function telaExclusao(){
 }
 
 function telaConsulta(){
-	$('#carregaPaginas').load('/public/jsps/consulta.jsp');
+	$.ajax({
+		url: "/consulta",
+		method: "get",
+		sucess: function (data){
+			$('#carregaPaginas').load('/public/jsps/consulta.jsp');
+		},
+		error: function (data){
+			$('#carregaPaginas').load('/public/jsps/consulta.jsp');
+		}
+	});
 }

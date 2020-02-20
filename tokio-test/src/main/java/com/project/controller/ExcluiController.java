@@ -25,7 +25,7 @@ public class ExcluiController {
 
         Request apiRequest = new Request.Builder()
                 .header("Content-Type", "text/xml")
-                .url("http://locahost:9090/customers/" + id)
+                .url("http://localhost:9090/customers/" + id)
                 .post(null)
                 .build();
         
@@ -33,8 +33,10 @@ public class ExcluiController {
         
         if(response.code() == 202){
         	//retorna msg de sucesso na exclusão.
+        	return "exclui";
         }
+        
+        return "error";
 		
-		return null;
 	}
 }

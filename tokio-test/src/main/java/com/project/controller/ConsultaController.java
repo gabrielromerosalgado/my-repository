@@ -6,10 +6,15 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.google.gson.Gson;
 
@@ -23,13 +28,14 @@ import okhttp3.Response;
 public class ConsultaController {
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String consultaClientes(HttpServletRequest request, Model model) throws IOException{
+	@ResponseBody
+	public Integer consultaClientes(HttpServletRequest request, Model model) throws IOException{
 		
 		OkHttpClient client = new OkHttpClient();
 
         Request apiRequest = new Request.Builder()
                 .header("Content-Type", "text/xml")
-                .url("http://locahost:9090/customers")
+                .url("http://localhost:9090/customers")
                 .get()
                 .build();
 
@@ -50,7 +56,15 @@ public class ConsultaController {
         	model.addAttribute("clientes", clientes);
         }
         
+        int code = response.code();
+        
+        if(code == 200){
+        	return 200;
+        } else if(code == 400) {
+        	return 200;
+        } else {
+        	return 200;
+        }
 		
-		return null;
 	}
 }

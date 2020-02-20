@@ -28,7 +28,7 @@ public class CadastroController {
 		
 		Request apiRequest = new Request.Builder()
             .header("Content-Type", "application/json")
-            .url("/customers/add/")
+            .url("http://localhost:9090/customers/add")
             .post(body)
             .build();
 		

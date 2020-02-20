@@ -18,17 +18,7 @@
 <body>
 	<h1> Consulta de clientes. </h1>
 	
-	<%-- <c:forEach items="${clientes}" var="client">
-		<span>${client}</span>
-	</c:forEach> --%>
 	<!-- <div class="col-lg-8">
-		<span> Cliente Teste </span>
-		<span> id: 2 </span>
-		<input class="menu_button" type="button" onclick="telaExclusao();" value="excluir">
-	</div> -->
-	<div class="col-lg-4">
-	</div>
-	<div class="col-lg-8">
 		<table>
 			<tr>
 				<th> nome </th>
@@ -43,10 +33,10 @@
 				<td> <input class="menu_button" type="button" onclick="telaEdicao();" value="editar"> </td>
 			</tr>
 		</table>
-	</div>
+	</div> -->
 	
 	<!-- Substituir por -->
-	<!-- <div class="col-lg-8">
+	<div class="col-lg-8">
 		<table>
 			<tr>
 				<th> nome </th>
@@ -63,7 +53,7 @@
 				</tr>
 			</c:forEach>
 		</table>
-	</div> -->
+	</div>
 </body>
 
 </html>
